@@ -6,8 +6,7 @@ export default function Home() {
   return (
     <div className='flex-1'>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Fasthosts | The Number 1 Domain Name Provider</title>
       </Head>
 
       <div className='relative h-[90vh] text-white bg-[#001C53]'>
@@ -37,7 +36,7 @@ export default function Home() {
       </div>
 
       <div className="relative max-w-7xl mx-auto">
-        <div className='flex justify-center flex-wrap lg:grid lg:grid-cols-4 gap-4 lg:absolute lg:left-0 lg:right-0 lg:-top-48 px-5'>
+        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:absolute lg:left-0 lg:right-0 lg:-top-48 px-5'>
           <FeatureCard 
             title='WordPress Hosting'
             price={1}

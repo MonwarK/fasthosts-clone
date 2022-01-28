@@ -1,9 +1,14 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 
 export default function register() {
   return (
-    <div className='grid place-items-center flex-1 min-h-[50vh]'>
+    <div className='grid place-items-center flex-1 min-h-[50vh] px-1 py-5'>
+      <Head>
+        <title>Register | Fasthosts</title>
+      </Head>
+
       <div className='shadow-lg p-5 rounded-2xl max-w-lg w-full border'>
         <h3 className='text-xl text-center mb-2 font-semibold'>Register</h3>
 

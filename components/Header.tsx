@@ -19,7 +19,9 @@ export default function Header() {
 
         <div className='hidden xl:flex items-center flex-1 space-x-3 px-2'>
           <nav className='flex items-center flex-1'>
-            <p className='cursor-pointer hover:bg-white hover:text-gray-800 px-2 py-1 rounded-full duration-200'>Domain</p>
+            <Link href="/domains">
+              <p className='cursor-pointer hover:bg-white hover:text-gray-800 px-2 py-1 rounded-full duration-200'>Domain</p>
+            </Link>
             <p className='cursor-pointer hover:bg-white hover:text-gray-800 px-2 py-1 rounded-full duration-200'>About</p>
             <p className='cursor-pointer hover:bg-white hover:text-gray-800 px-2 py-1 rounded-full duration-200'>Contact</p>
           </nav>
@@ -54,7 +56,9 @@ export default function Header() {
           <div className='flex justify-end h-full'>
             <div className='bg-[#031A4A] text-white pt-24 pb-4 max-w-xs w-full flex flex-col justify-between'>
               <div>
-                <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Domains</p>
+                <Link href="/domains">
+                  <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Domains</p>
+                </Link>
                 <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>About</p>
                 <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Contact</p>
               </div>
