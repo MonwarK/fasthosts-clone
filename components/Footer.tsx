@@ -3,9 +3,9 @@ import React from 'react';
 export default function Footer() {
   return (
     <div className='bg-[#031A4A] text-white px-5 py-16'>
-      <div className="max-w-6xl mx-auto grid md:grid-cols-5 text-sm">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 gap-2 sm:grid-cols-4 md:grid-cols-5 text-sm">
         <img 
-          className='h-5'
+          className='h-5 col-span-2 sm:col-span-4 md:col-span-1'
           src="https://www.fasthosts.co.uk/img/logos/logo.svg" 
           alt="Fasthosts Logo" 
         />

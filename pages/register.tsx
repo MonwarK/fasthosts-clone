@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function register() {
   return (
-    <div className='grid place-items-center flex-1 min-h-[50vh] px-1 py-5'>
+    <div className='grid place-items-center flex-1 min-h-[80vh] px-1 py-5'>
       <Head>
         <title>Register | Fasthosts</title>
       </Head>

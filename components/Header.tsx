@@ -22,7 +22,9 @@ export default function Header() {
             <Link href="/domains">
               <p className='cursor-pointer hover:bg-white hover:text-gray-800 px-2 py-1 rounded-full duration-200'>Domain</p>
             </Link>
-            <p className='cursor-pointer hover:bg-white hover:text-gray-800 px-2 py-1 rounded-full duration-200'>About</p>
+            <Link href="/about">
+              <p className='cursor-pointer hover:bg-white hover:text-gray-800 px-2 py-1 rounded-full duration-200'>About</p>
+            </Link>
             <p className='cursor-pointer hover:bg-white hover:text-gray-800 px-2 py-1 rounded-full duration-200'>Contact</p>
           </nav>
 
@@ -59,7 +61,9 @@ export default function Header() {
                 <Link href="/domains">
                   <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Domains</p>
                 </Link>
-                <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>About</p>
+                <Link href="/about">
+                  <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>About</p>
+                </Link>
                 <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Contact</p>
               </div>
 

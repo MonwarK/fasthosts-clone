@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function login() {
   return (
-    <div className='grid place-items-center flex-1 min-h-[50vh] px-1 py-5'>
+    <div className='grid place-items-center flex-1 min-h-[80vh] px-1 py-5'>
       <Head>
         <title>Login | Fasthosts</title>
       </Head>
@@ -28,9 +28,11 @@ export default function login() {
           />
         </div>
 
-        <button className='primary-button'>
-          LOG IN
-        </button>
+        <Link href="/profile">
+          <button className='primary-button'>
+            LOG IN
+          </button>
+        </Link>
 
         <Link href="/register">
           <p className='text-center text-blue-500 mt-2 active:underline cursor-pointer'>Don't have an account? Click here to sign up</p>

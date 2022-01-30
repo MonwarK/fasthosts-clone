@@ -90,21 +90,21 @@ export default function Home() {
               <div>
                 <h3 className='font-semibold text-2xl'>Cloud Servers</h3>
                 <p className='my-5'>Fully flexible servers with scalable resources. Configure your own specs and get down-to-the-minute billing.</p>
-                <button className='white-button'>Explore Cloud Servers</button>
+                <button disabled className='white-button'>COMING SOON</button>
               </div>
             </div>
             <div className='bg-[#1473E6] rounded-xl md:rounded-l-none md:rounded-r-xl overflow-hidden text-white px-10 py-5 grid place-items-center shadow-xl'>
               <div>
                 <h3 className='font-semibold text-2xl'>Virtual Private Servers</h3>
                 <p className='my-5'>Scalable servers with dedicated resources, top-notch performance and superfast SSD storage.</p>
-                <button className='white-button'>Take it Virtual</button>
+                <button disabled className='white-button'>COMING SOON</button>
               </div>
             </div>
             <div className='bg-white rounded-xl md:rounded-l-none md:rounded-r-xl overflow-hidden px-10 py-5 grid place-items-center shadow-xl'>
               <div>
                 <h3 className='font-semibold text-2xl'>Dedicated Servers</h3>
                 <p className='my-5'>Get ultimate performance from dedicated resources and top-of-the-line AMD and Intel tech.</p>
-                <button className='primary-button w-auto px-6 text-sm'>Choose your Dedi</button>
+                <button disabled className='primary-button w-auto px-6 text-sm'>COMING SOON</button>
               </div>
             </div>
           </div>

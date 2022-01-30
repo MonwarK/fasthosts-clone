@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 export default function domain() {
   return (
-    <div className='flex-1 flex flex-col'>
+    <div className='flex-1 flex flex-col min-h-[80vh]'>
       <Head>
         <title>Find Domains | Fasthosts</title>
       </Head>
@@ -20,7 +20,7 @@ export default function domain() {
           </button>
         </div>
       </div>
-      <div className='flex-1 grid place-items-center'>
+      <div className='flex-1 grid place-items-center p-3'>
         <div className='text-center'>
           <img 
             className='w-36 mx-auto'
