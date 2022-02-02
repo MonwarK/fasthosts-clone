@@ -1,4 +1,4 @@
-import { collection, onSnapshot, query } from 'firebase/firestore';
+import { collection, DocumentData, onSnapshot, query } from 'firebase/firestore';
 import React from 'react';
 import { useContext } from 'react';
 import { useState } from 'react';
@@ -10,7 +10,7 @@ import { db } from '../../firebase';
 
 export default function saved() {
   const { user } = useContext(AuthContext);
-  const [saved, setSaved] = useState([]);
+  const [saved, setSaved] = useState<DocumentData[]>([]);
 
   useEffect(() => {
     if (user) {
