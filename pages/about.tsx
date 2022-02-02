@@ -15,7 +15,7 @@ export default function about() {
         </div>
       </div>
 
-      <div className='max-w-4xl mx-auto grid md:grid-cols-2 text-[#031A4A] p-5'>
+      <div className='max-w-4xl mx-auto grid gap-3 md:grid-cols-2 text-[#031A4A] p-5'>
         <h1 className='text-4xl my-5 sm:col-span-2'>Winning technology and support</h1>
         <div>
           <p className='font-medium mb-5'>Since 1999, Fasthosts has been designing new ways to give customers everything they need to manage and control their online space. Innovation drives everything we do, ensuring we offer the latest internet technology across our range of services including domain names, shared web hosting, business-class email, dedicated servers, cloud servers, secure online storage and online backup. We also maintain a highly successful reseller channel.</p>

@@ -9,4 +9,7 @@
   .white-button {
     @apply bg-white hover:bg-gray-50 active:bg-gray-100 disabled:opacity-75 focus:ring-2 duration-200 rounded-lg text-sm py-3 px-6 ring-slate-400 font-medium text-gray-800
   }
+  .table {
+    @apply bg-white shadow-lg max-w-4xl mx-auto w-full text-center rounded-md p-5
+  }
 }

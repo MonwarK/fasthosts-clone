@@ -1,35 +1,70 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import DomainRow from '../components/DomainRow';
+import { AuthContext } from '../context/auth.context';
+
+interface Query {
+  name: string
+}
 
 export default function domain() {
+  const [domainName, setDomainName] = useState("");
+  const router = useRouter();
+  const { name } = router.query;
+  const { user } = useContext(AuthContext);
+
+  const search = async () => {
+    const name = domainName.split(' ').join('').toLowerCase();
+    if (!name) return;
+    
+    router.push({
+      pathname: '/domains',
+      query: { name }
+    })
+  }
+
   return (
-    <div className='flex-1 flex flex-col min-h-[80vh]'>
+    <div className='flex-1 flex flex-col bg-gray-100'>
       <Head>
-        <title>Find Domains | Fasthosts</title>
+        <title>{name ? `Domain results for '${name}'` : "Find Domains"} | Fasthosts</title>
       </Head>
 
       <div className='bg-blue-400 w-full p-4'>
-        <div className='flex justify-between p-1 rounded-md'>
+        <form onSubmit={(e) => e.preventDefault()} className='flex justify-between p-1 rounded-md'>
           <input 
+            onChange={(e) => setDomainName(e.target.value)}
             className='flex-1 outline-none text-gray-600 px-2 rounded-l-lg' 
             type="text"
             placeholder='Search for your perfect domain here'
           />
-          <button className='primary-button w-auto py-3 px-3 rounded-l-none'>
+          <button onClick={search} className='primary-button w-auto py-3 px-3 rounded-l-none'>
             Find Domains
           </button>
-        </div>
+        </form>
       </div>
-      <div className='flex-1 grid place-items-center p-3'>
-        <div className='text-center'>
-          <img 
-            className='w-36 mx-auto'
-            src="/images/Nomads.png" 
-            alt=""
-          />
-          <p className='text-sm italic'>Search for ideal domain</p>
+      { name ? (
+        <div className='flex-1 p-3 min-h-[80vh]'>
+          <div className='table'>
+            <h1 className='text-2xl font-medium mb-5'>Saved Domains</h1>
+            <DomainRow domain={`www.${name}.com`} price={0.99} />
+            <DomainRow domain={`www.${name}.co.uk`} price={0.99} />
+            <DomainRow domain={`www.${name}.net`} price={2.99} />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className='flex-1 grid place-items-center p-3 min-h-[80vh]'>
+          <div className='text-center'>
+            <img 
+              className='w-36 mx-auto'
+              src="/images/Nomads.png" 
+              alt=""
+            />
+            <p className='text-sm italic'>Search for ideal domain</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

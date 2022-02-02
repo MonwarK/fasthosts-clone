@@ -1,8 +1,23 @@
 import Head from 'next/head';
 import { SearchIcon } from "@heroicons/react/solid";
 import FeatureCard from '../components/FeatureCard';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const [domainName, setDomainName] = useState("");
+  const router = useRouter();
+
+  const search = () => {
+    const name = domainName.split(' ').join('').toLowerCase();
+    if (!name) return;
+    
+    router.push({
+      pathname: '/domains',
+      query: { name }
+    })
+  }
+
   return (
     <div className='flex-1'>
       <Head>
@@ -21,16 +36,17 @@ export default function Home() {
             <h1 className='font-bold text-5xl mb-5'>Host. Build. Scale.</h1>
             <p className='text-xl mb-10'>Tech doesn’t have to be complex. We’ll help you keep it simple with our flexible resources, reliable performance and round-the-clock support from real people.</p>
             
-            <div className='bg-white flex justify-between p-1 rounded-md space-x-2'>
+            <form onSubmit={(e) => e.preventDefault()} className='bg-white flex justify-between p-1 rounded-md space-x-2'>
               <input 
+                onChange={(e) => setDomainName(e.target.value)}
                 className='flex-1 outline-none text-gray-600 px-2' 
                 type="text"
                 placeholder='Search for your perfect domain here'
               />
-              <button className='primary-button w-auto px-4 py-2'>
+              <button onClick={search} className='primary-button w-auto px-4 py-2'>
                 <SearchIcon className='h-8' />
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -80,7 +96,7 @@ export default function Home() {
         <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-2'>
 
           <div className='bg-white rounded-xl md:rounded-r-none md:rounded-l-xl shadow-lg p-10'>
-            <h2 className='text-5xl text-[#031A4A] font-medium leading-tight'><span className='text-blue-600'>Scalable</span> technology that packs a <span className='text-blue-400'>punch</span></h2>
+            <h2 className='text-3xl md:text-5xl text-[#031A4A] font-medium leading-tight'><span className='text-blue-600'>Scalable</span> technology that packs a <span className='text-blue-400'>punch</span></h2>
             <p className='my-7'>With dedicated resources and the power of advanced processor technology, our servers are the solution your project has been craving. Get built-in security that keeps your data safe and full root access, right down to your choice of operating system.</p>
             <img src="https://www.fasthosts.co.uk/img/new-images/misc/vps.svg" alt="" />
           </div>
