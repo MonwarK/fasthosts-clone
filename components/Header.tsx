@@ -5,10 +5,31 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../context/auth.context';
 import { motion } from 'framer-motion';
+import Switch from "react-switch";
+import { useEffect } from 'react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (localStorage.theme = 'dark') {
+      setIsDark(true)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [isDark])
+
+  const changeTheme = (checked:boolean) => {
+    setIsDark(checked);
+  }
 
   return (
     <>
@@ -33,6 +54,19 @@ export default function Header() {
               <p className='cursor-pointer hover:bg-white hover:text-gray-800 px-2 py-1 rounded-full duration-200'>Contact</p>
             </Link>
           </nav>
+
+          <div className='flex items-center space-x-2 mx-5'>
+            <Switch 
+              height={20}
+              width={40}
+              className='p-0'
+              checkedIcon={false}
+              uncheckedIcon={false}
+              onChange={changeTheme}
+              checked={isDark} 
+            />
+            <p>Dark Mode</p>
+          </div>
 
           <div>
             <p>Sales <span className='text-blue-300 cursor-pointer'>0800 0612 153</span></p>

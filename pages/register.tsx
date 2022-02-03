@@ -15,12 +15,12 @@ export default function register() {
 
   return (
     <IsAuth isAuth={false}>
-      <div className='grid place-items-center flex-1 min-h-[80vh] px-1 py-5'>
+      <div className='grid place-items-center flex-1 min-h-[80vh] px-1 py-5 dark:bg-gray-900 dark:text-white'>
         <Head>
           <title>Register | Fasthosts</title>
         </Head>
 
-        <div className='shadow-lg p-5 rounded-2xl max-w-lg w-full border'>
+        <div className='shadow-lg p-5 rounded-2xl max-w-lg w-full border dark:bg-gray-800 dark:border-gray-800'>
           <h3 className='text-xl text-center mb-2 font-semibold'>Register</h3>
 
           <div className='mb-5'>

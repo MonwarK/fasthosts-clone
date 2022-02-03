@@ -13,7 +13,7 @@ export default function index() {
       <Head>
         <title>Welcome {user?.name} | Fasthosts</title>
       </Head>
-      <div className='flex-1 grid place-items-center px-1 py-3 bg-gray-50 text-center min-h-[80vh]'>
+      <div className='flex-1 grid place-items-center px-1 py-3 bg-gray-50 dark:bg-gray-900 dark:text-white text-center min-h-[80vh]'>
         <div>
           <h1 className='text-2xl mb-10'>Hello {user?.name}</h1>
           <div className='grid grid-cols-3 gap-3 my-2'>

@@ -15,7 +15,7 @@ export default function saved() {
       <Head>
         <title>Saved Domains | Fasthosts</title>
       </Head>
-      <div className='flex-1 px-1 py-3 bg-gray-50 min-h-[80vh]'>
+      <div className='flex-1 px-1 py-3 bg-gray-50 dark:bg-gray-900 min-h-[80vh]'>
         {saved.length > 0 && (
           <motion.div 
             initial={{ scale: 0 }}

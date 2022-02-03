@@ -19,7 +19,7 @@ export default function Home() {
   }
 
   return (
-    <div className='flex-1'>
+    <div className='flex-1 dark:bg-gray-900 dark:text-white'>
       <Head>
         <title>Fasthosts | The Number 1 Domain Name Provider</title>
       </Head>
@@ -84,7 +84,7 @@ export default function Home() {
         </div> 
       </div>
 
-      <div className='max-w-5xl mx-auto lg:mt-[15%] py-20 text-gray-800'>
+      <div className='max-w-5xl mx-auto lg:mt-[15%] py-20 text-gray-800 dark:text-white'>
         <div className='flex flex-col items-center justify-center lg:flex-row lg:justify-between'>
           <img className="h-10" src="https://www.fasthosts.co.uk/img/trustpilot/stars-4.svg" alt="4 Stars on TrustPilot" />
           <p className='text-2xl my-5'>Rated 4/5 based on 3513 reviews</p>
@@ -92,10 +92,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='bg-gray-100 p-10'>
+      <div className='bg-gray-100 dark:bg-gray-800 p-10'>
         <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-2'>
 
-          <div className='bg-white rounded-xl md:rounded-r-none md:rounded-l-xl shadow-lg p-10'>
+          <div className='bg-white dark:bg-gray-700 rounded-xl md:rounded-r-none md:rounded-l-xl shadow-lg p-10'>
             <h2 className='text-3xl md:text-5xl text-[#031A4A] font-medium leading-tight'><span className='text-blue-600'>Scalable</span> technology that packs a <span className='text-blue-400'>punch</span></h2>
             <p className='my-7'>With dedicated resources and the power of advanced processor technology, our servers are the solution your project has been craving. Get built-in security that keeps your data safe and full root access, right down to your choice of operating system.</p>
             <img src="https://www.fasthosts.co.uk/img/new-images/misc/vps.svg" alt="" />
@@ -116,7 +116,7 @@ export default function Home() {
                 <button disabled className='white-button'>COMING SOON</button>
               </div>
             </div>
-            <div className='bg-white rounded-xl md:rounded-l-none md:rounded-r-xl overflow-hidden px-10 py-5 grid place-items-center shadow-xl'>
+            <div className='bg-white dark:bg-gray-700 rounded-xl md:rounded-l-none md:rounded-r-xl overflow-hidden px-10 py-5 grid place-items-center shadow-xl'>
               <div>
                 <h3 className='font-semibold text-2xl'>Dedicated Servers</h3>
                 <p className='my-5'>Get ultimate performance from dedicated resources and top-of-the-line AMD and Intel tech.</p>

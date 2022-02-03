@@ -32,12 +32,12 @@ export default function domain() {
   }
 
   return (
-    <div className='flex-1 flex flex-col bg-gray-100'>
+    <div className='flex-1 flex flex-col bg-gray-100 dark:bg-gray-900 dark:text-white'>
       <Head>
         <title>{name ? `Domain results for '${name}'` : "Find Domains"} | Fasthosts</title>
       </Head>
 
-      <div className='bg-blue-400 w-full p-4'>
+      <div className='bg-blue-400 dark:bg-slate-500 w-full p-4'>
         <form onSubmit={(e) => e.preventDefault()} className='flex justify-between p-1 rounded-md'>
           <input 
             onChange={(e) => setDomainName(e.target.value)}
