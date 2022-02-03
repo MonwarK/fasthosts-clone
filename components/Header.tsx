@@ -133,6 +133,18 @@ export default function Header() {
                 </Link> 
               )}
               <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Get Support</p>
+              <div className='flex items-center space-x-2 m-5'>
+                <Switch 
+                  height={20}
+                  width={40}
+                  className='p-0'
+                  checkedIcon={false}
+                  uncheckedIcon={false}
+                  onChange={changeTheme}
+                  checked={isDark} 
+                />
+                <p>Dark Mode</p>
+              </div>
             </div>
           </motion.div>
         </div>
