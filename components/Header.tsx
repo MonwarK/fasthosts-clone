@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../context/auth.context';
+import { motion } from 'framer-motion';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +70,12 @@ export default function Header() {
       {isOpen && (
         <div className='xl:hidden z-40 bg-blue-900 bg-opacity-70 fixed top-0 left-0 w-full h-full flex'>
           <div onClick={() => setIsOpen(false)} className='flex-grow' />
-          <div className='bg-[#031A4A] text-white pt-24 pb-4 max-w-xs w-full flex flex-col justify-between'>
+          <motion.div 
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ type: "spring", stiffness: 50 }}
+            className='bg-[#031A4A] text-white pt-24 pb-4 max-w-xs w-full flex flex-col justify-between'
+          >
             <div>
               <Link href="/domains">
                 <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Domains</p>
@@ -94,7 +100,7 @@ export default function Header() {
               )}
               <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Get Support</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
     </>

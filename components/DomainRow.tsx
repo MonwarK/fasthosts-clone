@@ -1,36 +1,25 @@
-import { doc, getDoc, setDoc } from 'firebase/firestore';
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../context/auth.context';
-import { db } from '../firebase';
+import { SavedContext } from '../context/saved.context';
 
 interface Props {
   domain: string,
   price: number
 }
 
-type Info = {
-  name: string
-}
-
 export default function DomainRow({ domain, price } : Props) {
+  const { addToSaved, saved } = useContext(SavedContext);
   const { user } = useContext(AuthContext);
 
-  const addToSaved = async () => {
-    const info : Info = {
-      name: domain
-    }
-
-    const docRef = doc(db, "users", user.id, "domains", domain);
-    setDoc(docRef, info);
-  }
+  const isSaved = saved.filter((item:any) => item.name === domain) 
 
   return (
     <tr className='grid grid-cols-3 my-5'>
       <td className='text-left'>{domain}</td>
       <td>£{price}</td>
       <td className='text-right'>
-        <button onClick={addToSaved} disabled={!user} className='primary-button px-7 max-w-[150px]'>Add to Wishlist</button>
+        <button onClick={() => addToSaved(domain)} disabled={!user || isSaved.length > 0} className='primary-button px-7 max-w-[150px]'>{isSaved.length > 0 ? "ADDED" : "Add to Wishlist"}</button>
       </td>
     </tr>
   );

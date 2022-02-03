@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import DomainRow from '../components/DomainRow';
 import { AuthContext } from '../context/auth.context';
+import { motion } from 'framer-motion';
 
 interface Query {
   name: string
@@ -11,11 +12,12 @@ interface Query {
 
 export default function domain() {
   const [domainName, setDomainName] = useState("");
+  const [animate, setAnimate] = useState({ scale: 1 });
   const router = useRouter();
   const { name } = router.query;
-  const { user } = useContext(AuthContext);
 
   const search = async () => {
+    setAnimate({ scale: 0 })
     const name = domainName.split(' ').join('').toLowerCase();
     if (!name) return;
     
@@ -23,6 +25,10 @@ export default function domain() {
       pathname: '/domains',
       query: { name }
     })
+
+    setTimeout(() => {
+      setAnimate({ scale: 1 })
+    }, 100)
   }
 
   return (
@@ -46,12 +52,16 @@ export default function domain() {
       </div>
       { name ? (
         <div className='flex-1 p-3 min-h-[80vh]'>
-          <div className='table'>
+          <motion.div 
+            initial={{ scale: 0 }}
+            animate={animate}
+            className='table'
+          >
             <h1 className='text-2xl font-medium mb-5'>Saved Domains</h1>
             <DomainRow domain={`www.${name}.com`} price={0.99} />
             <DomainRow domain={`www.${name}.co.uk`} price={0.99} />
             <DomainRow domain={`www.${name}.net`} price={2.99} />
-          </div>
+          </motion.div>
         </div>
       ) : (
         <div className='flex-1 grid place-items-center p-3 min-h-[80vh]'>

@@ -1,41 +1,33 @@
-import { collection, DocumentData, onSnapshot, query } from 'firebase/firestore';
+import { DocumentData } from 'firebase/firestore';
+import { motion } from 'framer-motion';
+import Head from 'next/head';
 import React from 'react';
 import { useContext } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import IsAuth from '../../components/IsAuth';
 import SavedRow from '../../components/SavedRow';
-import { AuthContext } from '../../context/auth.context';
-import { db } from '../../firebase';
+import { SavedContext } from "../../context/saved.context";
 
 export default function saved() {
-  const { user } = useContext(AuthContext);
-  const [saved, setSaved] = useState<DocumentData[]>([]);
-
-  useEffect(() => {
-    if (user) {
-      const unsubcribe = onSnapshot(
-        query(collection(db, "users", user.id, "domains")),
-        (snapshot) => setSaved(snapshot.docs.map(doc => doc.data()))
-      );
-  
-      return () => {
-        unsubcribe();
-      };
-    }
-  }, [db]);
-  
+  const { saved } : any = useContext(SavedContext);
 
   return (
     <IsAuth isAuth={true}>
+      <Head>
+        <title>Saved Domains | Fasthosts</title>
+      </Head>
       <div className='flex-1 px-1 py-3 bg-gray-50 min-h-[80vh]'>
-        <div className='table'>
-          <h1 className='text-2xl font-medium mb-5'>Saved Domains</h1>
-          {saved.map(({ name }, i) => (
-            <SavedRow key={i.toString()} domain={name} />
-          ))}
-          {console.log(saved)}
-        </div>
+        {saved.length > 0 && (
+          <motion.div 
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            className='table'
+          >
+            <h1 className='text-2xl font-medium mb-5'>Saved Domains</h1>
+            {saved.map((item: any, i: { toString: () => React.Key | null | undefined; }) => (
+              <SavedRow key={i.toString()} domain={item.name} />
+            ))}
+          </motion.div>
+        )}
       </div>
     </IsAuth>
   );

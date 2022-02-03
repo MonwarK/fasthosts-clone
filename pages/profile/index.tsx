@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React from 'react';
 import { useContext } from 'react';
 import IsAuth from '../../components/IsAuth';
@@ -9,6 +10,9 @@ export default function index() {
   
   return (
     <IsAuth isAuth={true}>
+      <Head>
+        <title>Welcome {user?.name} | Fasthosts</title>
+      </Head>
       <div className='flex-1 grid place-items-center px-1 py-3 bg-gray-50 text-center min-h-[80vh]'>
         <div>
           <h1 className='text-2xl mb-10'>Hello {user?.name}</h1>

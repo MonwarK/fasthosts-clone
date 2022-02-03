@@ -7,7 +7,7 @@ export default function contact() {
       <Head>
         <title>Contact us | Fasthosts</title>
       </Head>
-      <h1 className='text-7xl font-semibold text-blue-500'>Contact us</h1>
+      <h1 className='text-5xl md:text-7xl font-semibold text-blue-500'>Contact us</h1>
       <p className='my-5'>We welcome your feedback to help us to continue to provide our customers with the best possible experience.</p>
 
       <div className='grid md:grid-cols-2 gap-3'>

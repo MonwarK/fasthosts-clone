@@ -1,8 +1,13 @@
+import Head from 'next/head';
 import React from 'react';
 
 export default function about() {
   return (
     <div className='flex-1'>
+      <Head>
+        <title>About us | Fasthosts</title>
+      </Head>
+
       <div className='h-96 relative flex items-center px-2'>
         <img 
           className='w-full h-full z-10 object-cover absolute top-0 left-0'
