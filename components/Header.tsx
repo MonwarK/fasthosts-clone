@@ -33,7 +33,7 @@ export default function Header() {
 
   return (
     <>
-      <header className='bg-[#031A4A] text-white py-6 px-3 flex items-center justify-between text-sm sticky top-0 left-0 z-50'>
+      <header className='bg-[#031A4A] dark:bg-slate-800 text-white py-6 px-3 flex items-center justify-between text-sm sticky top-0 left-0 z-50'>
         <Link href="/">
           <img 
             className='h-6 cursor-pointer'
@@ -102,37 +102,37 @@ export default function Header() {
       </header>
 
       {isOpen && (
-        <div className='xl:hidden z-40 bg-blue-900 bg-opacity-70 fixed top-0 left-0 w-full h-full flex'>
+        <div className='xl:hidden z-40 bg-blue-900 dark:bg-black dark:bg-opacity-50 bg-opacity-70 fixed top-0 left-0 w-full h-full flex'>
           <div onClick={() => setIsOpen(false)} className='flex-grow' />
           <motion.div 
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ type: "spring", stiffness: 50 }}
-            className='bg-[#031A4A] text-white pt-24 pb-4 max-w-xs w-full flex flex-col justify-between'
+            className='bg-[#031A4A] dark:bg-slate-800 text-white pt-24 pb-4 max-w-xs w-full flex flex-col justify-between'
           >
             <div>
               <Link href="/domains">
-                <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Domains</p>
+                <p className='px-5 py-4 hover:bg-blue-900 dark:hover:bg-slate-900 cursor-pointer'>Domains</p>
               </Link>
               <Link href="/about">
-                <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>About</p>
+                <p className='px-5 py-4 hover:bg-blue-900 dark:hover:bg-slate-900 cursor-pointer'>About</p>
               </Link>
               <Link href="/contact">
-                <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Contact</p>
+                <p className='px-5 py-4 hover:bg-blue-900 dark:hover:bg-slate-900 cursor-pointer'>Contact</p>
               </Link>
             </div>
 
             <div>
               {user ? (
                 <Link href="/profile">
-                  <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>My Profile</p>
+                  <p className='px-5 py-4 hover:bg-blue-900 dark:hover:bg-slate-900 cursor-pointer'>My Profile</p>
                 </Link>
               ) : (
                 <Link href="/login">
-                  <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Login</p>
+                  <p className='px-5 py-4 hover:bg-blue-900 dark:hover:bg-slate-900 cursor-pointer'>Login</p>
                 </Link> 
               )}
-              <p className='px-5 py-4 hover:bg-blue-900 cursor-pointer'>Get Support</p>
+              <p className='px-5 py-4 hover:bg-blue-900 dark:hover:bg-slate-900 cursor-pointer'>Get Support</p>
               <div className='flex items-center space-x-2 m-5'>
                 <Switch 
                   height={20}

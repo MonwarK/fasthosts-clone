@@ -19,7 +19,7 @@ export default function Home() {
   }
 
   return (
-    <div className='flex-1 dark:bg-gray-900 dark:text-white'>
+    <div className='flex-1 dark:bg-gray-800 dark:text-white'>
       <Head>
         <title>Fasthosts | The Number 1 Domain Name Provider</title>
       </Head>
@@ -92,7 +92,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='bg-gray-100 dark:bg-gray-800 p-10'>
+      <div className='bg-gray-100 dark:bg-gray-900 p-10'>
         <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-2'>
 
           <div className='bg-white dark:bg-gray-700 rounded-xl md:rounded-r-none md:rounded-l-xl shadow-lg p-10'>
